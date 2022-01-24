@@ -16,8 +16,8 @@ export class GradesComponent implements OnInit {
     
     this.infoAuthentication = {
       userName: this.authentication.infoAuthentication.userName,
-      userEmail: '',
-      imageUser: ''
+      userEmail: this.authentication.infoAuthentication.userEmail,
+      imageUser: this.authentication.infoAuthentication.imageUser
   
     }
 
