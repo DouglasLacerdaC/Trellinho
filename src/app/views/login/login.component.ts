@@ -14,11 +14,11 @@ export class LoginComponent implements OnInit {
   constructor(private auth: AuthService) { }
 
   ngOnInit(): void {
-
+    
     window.addEventListener('scroll', () => {
-
+      
       this.animaScroll()
-
+      
     })
 
   }

@@ -40,3 +40,56 @@
     transform: translate3d(0, 0, 0) !important;
     color: #ffffff;
 }
+
+/* animation keyframes initial */
+
+@keyframes initialLeft {
+    0% {
+        opacity: 0;
+        transform: translate3d(-100px, 0, 0);
+
+    }
+    50% {
+        opacity: 0;
+        transform: translate3d(-100px, 0, 0);
+
+    }
+    100% {
+        opacity: 1 !important;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes initialBottom {
+    0% {
+        opacity: 0;
+        transform: translate3d(0, -100px, 0);
+
+    }
+    50% {
+        opacity: 0;
+        transform: translate3d(0, -100px, 0);
+
+    }
+    100% {
+        opacity: 1 !important;
+        transform: translate3d(0, 0, 0);
+    }
+}
+
+@keyframes initialRight {
+    0% {
+        opacity: 0;
+        transform: translate3d(100px, 0, 0);
+
+    }
+    50% {
+        opacity: 0;
+        transform: translate3d(100px, 0, 0);
+
+    }
+    100% {
+        opacity: 1 !important;
+        transform: translate3d(0, 0, 0);
+    }
+}

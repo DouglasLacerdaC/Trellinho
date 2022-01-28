@@ -20,6 +20,8 @@
                 font-size: 45px;
                 letter-spacing: -1px;
                 text-shadow: 0px 2px 4px rgba(0, 0, 0, 0.12);
+                animation: initialLeft 1s;
+                animation-fill-mode: forwards;
             }
     
         }
@@ -28,6 +30,11 @@
             display: flex;
             flex-direction: column;
             justify-content: center;
+
+            .logo {
+                animation: initialBottom 1s;
+                animation-fill-mode: forwards;
+            }
 
             button {
                 display: flex;
@@ -43,6 +50,8 @@
                 font-weight: 900;
                 color: #000000a1;
                 box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.21);
+                animation: initialRight 1s;
+                animation-fill-mode: forwards;
 
                 &:hover {
                     transform: scale(1.03);
