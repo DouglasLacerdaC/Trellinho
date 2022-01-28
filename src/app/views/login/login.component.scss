@@ -63,17 +63,35 @@
 
 }
 
-.teste-scroll {
+.demonstration {
     background-color: #ffffff;
-    min-height: 100vh;
     transition: 300ms;
 
+    h2 {
+        text-align: center;
+    }
+
     .info {
-        max-width: 900px;
-        margin: 0 auto;
+        width: 1100px;
+        margin: 0 auto 100vh auto;
         display: flex;
         justify-content: space-between;
+        align-items: center;
         padding: 20px;
+
+        .example-images {
+
+            .phone {
+                position: absolute;
+                z-index: 1000;
+            }
+
+            .example {
+                transition-delay: 800ms;
+                margin: 20px 0 0 100px;
+            }
+
+        }
 
     }
 

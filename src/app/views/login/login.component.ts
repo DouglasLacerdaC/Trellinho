@@ -21,8 +21,6 @@ export class LoginComponent implements OnInit {
 
     })
 
-    this.animaScroll()
-
   }
 
   authentication() {
@@ -33,7 +31,7 @@ export class LoginComponent implements OnInit {
 
   animaScroll() {
 
-    const topPage = window.pageYOffset + ((window.innerHeight * 3) / 7)
+    const topPage = window.pageYOffset + ((window.innerHeight * 3) / 6)
 
     if(topPage > this.elementA.nativeElement.offsetTop) {
 
