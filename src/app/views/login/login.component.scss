@@ -75,24 +75,52 @@
 .demonstration {
     background-color: #ffffff;
     transition: 300ms;
+    padding: 50px 0;
+
+    p {
+        color: #ffffffaf;
+        font-size: 20px;
+        text-align: center;
+        transition-delay: 200ms;
+        margin: 0 0 20px 0;
+
+        strong {
+            color: #ffffff;
+        }
+
+    }
 
     h2 {
         text-align: center;
+        font-size: 32px;
+        padding: 0 0 20px 0;
+        font-family: 'Inter', sans-serif;
+        transition-delay: 100ms;
     }
 
     .info {
         width: 1100px;
-        margin: 0 auto 100vh auto;
+        margin: 0 auto;
         display: flex;
         justify-content: space-between;
         align-items: center;
         padding: 20px;
+
+        .cards-demonstration {
+            
+            p {
+                color: #ffffff71;
+                text-align: left;
+            }
+            
+        }
 
         .example-images {
 
             .phone {
                 position: absolute;
                 z-index: 1000;
+                transition-delay: 500ms;
             }
 
             .example {
@@ -107,5 +135,5 @@
 }
 
 .animacao {
-    background-color: #00c875;
+    background-color: #1b2622;
 }
