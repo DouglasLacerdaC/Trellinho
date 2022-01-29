@@ -1,8 +1,11 @@
 <div class="view-login">
+
    <div class="container">
+
         <div class="about">
             <h3>Utilize nossa aplicação Trellinho e adicione notas com outras pessoas.</h3>
         </div>
+
         <div class="login">
             <img class="logo" src="../../../assets/img/logo.svg" alt="">
             <button (click)="authentication()">
@@ -10,12 +13,16 @@
                 Entrar com o google
             </button>
         </div>
+
    </div>
+
 </div>
 
 <div class="demonstration" #animaElement>
+
     <h2 class="bottom" #aside>Organize suas tarefas do dia a dia</h2>
     <p class="bottom" #aside>disponível para <strong>todos</strong> os dispositivos</p>
+
     <div class="info">
         <div class="cards-demonstration">
             <p class="left" #aside>Layout limpo e de fácil utilização para todos os usúarios.</p>
@@ -25,20 +32,37 @@
             <img class="bottom example" #aside src="../../../assets/img/example.svg" width="600">
         </div>
     </div>
+
 </div>
 
 <div class="actions">
-    <div class="cards">
-        <div class="card">
-            <div class="header-card">
-                <p class="name-user">Sérgio</p>
-                <img  class="image-user" src="https://png.pngtree.com/png-vector/20190710/ourlarge/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="">
+    <h3 class="bottom title" #aside>Além de ser totalmente gratuito</h3>
+    <p class="bottom subtitle" #aside>o Trellinho apresenta <strong>grandes vantagens</strong></p>
+
+    <div class="actions-container">
+
+        <div class="cards">
+
+            <div class="card right" #aside *ngFor="let item of [1, 2, 3]">
+                <div class="header-card">
+                    <p class="name-user">Sérgio</p>
+                    <img  class="image-user" src="https://png.pngtree.com/png-vector/20190710/ourlarge/pngtree-user-vector-avatar-png-image_1541962.jpg" alt="">
+                </div>
+                <div class="body-card">
+                    <p class="content">
+                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic facere praesentium eum accusamus?
+                    </p>
+                </div>
             </div>
-            <div class="body-card">
-                <p class="content">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Hic facere praesentium eum accusamus?
-                </p>
+
+        </div>
+
+        <div class="benefits">
+            <div class="advantage left" #aside *ngFor="let item of [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12]">
+                <p>Fácil acesso</p>
             </div>
         </div>
+
     </div>
+
 </div>
