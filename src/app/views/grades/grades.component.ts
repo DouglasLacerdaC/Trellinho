@@ -14,11 +14,12 @@ export class GradesComponent implements OnInit {
   
   ngOnInit(): void {
     
+    const jsonUser = JSON.parse(localStorage.getItem('userInfo')!)
+
     this.infoAuthentication = {
-      userName: this.authentication.infoAuthentication.userName,
-      userEmail: this.authentication.infoAuthentication.userEmail,
-      imageUser: this.authentication.infoAuthentication.imageUser
-  
+      userName: jsonUser.userName,
+      userEmail: jsonUser.userEmail,
+      imageUser: jsonUser.imageUser
     }
 
   }

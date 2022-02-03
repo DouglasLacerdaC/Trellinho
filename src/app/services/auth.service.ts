@@ -21,19 +21,17 @@ export class AuthService {
     signInWithPopup(auth, provider)
     .then((result) => {
 
-      console.log(result)
-
       this.infoAuthentication = {
         userName: result.user.displayName,
         userEmail: result.user.email,
         imageUser: result.user.photoURL
       }
 
-      this.router.navigate(['grades'])
+      const user = JSON.stringify(this.infoAuthentication)
 
-      setTimeout(() => {
-        alert(`Logado com sucesso ${this.infoAuthentication.userName}`)
-      }, 2000)
+      localStorage.setItem('userInfo', user)
+
+      this.router.navigate(['grades'])
 
     })
 

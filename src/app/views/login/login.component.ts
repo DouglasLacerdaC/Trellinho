@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild, ViewChildren } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/services/auth.service';
 
 @Component({
@@ -11,9 +12,16 @@ export class LoginComponent implements OnInit {
   @ViewChild('animaElement') elementA: any
   @ViewChildren('aside') aside: any
 
-  constructor(private auth: AuthService) { }
+  constructor(private auth: AuthService,
+              private router: Router) { }
 
   ngOnInit(): void {
+
+    if(localStorage.getItem('userInfo')) {
+
+      this.router.navigate(['grades'])
+      
+    }
     
     window.addEventListener('scroll', () => {
       
