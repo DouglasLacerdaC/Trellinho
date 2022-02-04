@@ -1,21 +1,23 @@
+<div (click)="openMenu()" class="hamburguer" #hamburguer>
+    <div class="grab">
+        <span></span>
+    </div>
+</div>
+
 <aside class="menu" #menu>
     
     <div class="content-menu">
 
         <div class="data-user">
             <img src="{{ infoAuthentication.imageUser }}" alt="">
-            
             <div class="login">
-            
                 <span>Olá, {{ infoAuthentication.userName }}</span>
                 <span>{{ infoAuthentication.userEmail }}</span>
-            
             </div>
         </div>
 
         <nav>
             <ul>
-
                 <li>
                     <a href="">
                         <span>
@@ -24,7 +26,6 @@
                         Home
                     </a>
                 </li>
-                
                 <li>
                     <a href="">
                         <span>
@@ -33,7 +34,6 @@
                         Notas
                     </a>
                 </li>
-                
                 <li>
                     <a href="">
                         <span>
@@ -42,9 +42,7 @@
                         Configurações
                     </a>
                 </li>
-
                 <li><a (click)="logout()" href="">Sair</a></li>
-
             </ul>
         </nav>
 
@@ -52,14 +50,51 @@
     
 </aside>
 
-<div class="background-menu" (click)="openMenu()" #background></div>
-
 <div class="content">
+
+    <div class="header">
+        <img src="../../../assets/img/logo.svg" alt="Logo Trellinho">
+    </div>
+
+    <h2>Adicione aqui suas anotações</h2>
+
+    <div class="form-notes">
+        <form [formGroup]="notes" (ngSubmit)="onSubmit()">
+
+            <div class="radios">
+
+                <div class="form-radio">
+                    <input type="radio" formControlName="type" id="tarefa" value="tarefa">
+                    <label for="tarefa"><i class="fas fa-tasks"></i>Tarefa</label>
+                </div>
+                
+                <div class="form-radio">
+                    <input type="radio" formControlName="type" id="lembrete" value="lembrete">
+                    <label for="lembrete"><i class="far fa-sticky-note"></i>Lembrete</label>
+                </div>
+                
+                <div class="form-radio">
+                    <input type="radio" formControlName="type" id="evento" value="evento">
+                    <label for="evento"><i class="far fa-calendar-alt"></i>Evento</label>
+                </div>
+
+            </div>
+            
+            <div class="form-control">
+                <label for="">Titulo: </label>
+                <input type="text" formControlName="title">
+            </div>
+            
+            <div class="form-control">
+                <label for="">Conteúdo: </label>
+                <textarea formControlName="description"></textarea>
+            </div>
+    
+            <button>enviar</button>
+    
+        </form>
+    </div>
     
 </div>
 
-<div (click)="openMenu()" class="hamburguer" #hamburguer>
-    <div class="grab">
-        <span></span>
-    </div>
-</div>
+<div class="background-menu" (click)="openMenu()" #background></div>

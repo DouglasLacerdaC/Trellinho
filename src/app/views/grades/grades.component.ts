@@ -1,4 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
@@ -13,6 +14,12 @@ export class GradesComponent implements OnInit {
   @ViewChild('hamburguer') hamburguer: any
 
   infoAuthentication: any = []
+
+  notes = new FormGroup({
+    title: new FormControl(''),
+    description: new FormControl(''),
+    type: new FormControl('', Validators.required)
+  })
   
   constructor(private router: Router) { }
   
@@ -45,6 +52,10 @@ export class GradesComponent implements OnInit {
   logout() {
     localStorage.clear()
     this.router.navigate([''])
+  }
+
+  onSubmit() {
+    console.log(this.notes.value)
   }
 
 }
