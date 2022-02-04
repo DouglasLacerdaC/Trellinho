@@ -2,29 +2,64 @@
     
     <div class="content-menu">
 
-        <img src="{{ infoAuthentication.imageUser }}" alt="">
+        <div class="data-user">
+            <img src="{{ infoAuthentication.imageUser }}" alt="">
+            
+            <div class="login">
+            
+                <span>Olá, {{ infoAuthentication.userName }}kkk</span>
+                <span>{{ infoAuthentication.userEmail }}</span>
+            
+            </div>
+        </div>
 
         <nav>
-
             <ul>
 
-                <li><a href="">Home</a></li>
-                <li><a href="">Notas</a></li>
-                <li><a href="">Configurações</a></li>
+                <li>
+                    <a href="">
+                        <span>
+                            <i class="fas fa-arrow-right"></i>
+                        </span>
+                        Home
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="">
+                        <span>
+                            <i class="fas fa-arrow-right"></i>
+                        </span>
+                        Notas
+                    </a>
+                </li>
+                
+                <li>
+                    <a href="">
+                        <span>
+                            <i class="fas fa-arrow-right"></i>
+                        </span>
+                        Configurações
+                    </a>
+                </li>
+
                 <li><a (click)="logout()" href="">Sair</a></li>
 
             </ul>
-
         </nav>
 
     </div>
-
+    
 </aside>
 
-<div class="content">
+<div class="background-menu" (click)="openMenu()" #background></div>
 
+<div class="content">
+    
 </div>
 
-<div (click)="openMenu()" class="hamburguer">
-    =
+<div (click)="openMenu()" class="hamburguer" #hamburguer>
+    <div class="grab">
+        <span></span>
+    </div>
 </div>

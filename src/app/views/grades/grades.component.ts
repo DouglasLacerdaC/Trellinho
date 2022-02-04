@@ -9,6 +9,8 @@ import { Router } from '@angular/router';
 export class GradesComponent implements OnInit {
 
   @ViewChild('menu') menu: any
+  @ViewChild('background') background: any
+  @ViewChild('hamburguer') hamburguer: any
 
   infoAuthentication: any = []
   
@@ -28,6 +30,8 @@ export class GradesComponent implements OnInit {
 
   openMenu() {
     this.menu.nativeElement.classList.toggle('open')
+    this.background.nativeElement.classList.toggle('background-active')
+    this.hamburguer.nativeElement.classList.toggle('hamburguer-open')
   }
 
   logout() {
