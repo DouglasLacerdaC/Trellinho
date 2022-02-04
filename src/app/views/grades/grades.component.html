@@ -1,3 +1,30 @@
-<p>Bem-vindo, {{ infoAuthentication.userName }}</p>
-<img src="{{ infoAuthentication.imageUser }}" alt="">
-<p>{{ infoAuthentication.userEmail }}</p>
+<aside class="menu" #menu>
+    
+    <div class="content-menu">
+
+        <img src="{{ infoAuthentication.imageUser }}" alt="">
+
+        <nav>
+
+            <ul>
+
+                <li><a href="">Home</a></li>
+                <li><a href="">Notas</a></li>
+                <li><a href="">Configurações</a></li>
+                <li><a (click)="logout()" href="">Sair</a></li>
+
+            </ul>
+
+        </nav>
+
+    </div>
+
+</aside>
+
+<div class="content">
+
+</div>
+
+<div (click)="openMenu()" class="hamburguer">
+    =
+</div>

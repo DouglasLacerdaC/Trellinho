@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { AuthService } from 'src/app/services/auth.service';
+import { Component, OnInit, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-grades',
@@ -8,9 +8,11 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class GradesComponent implements OnInit {
 
+  @ViewChild('menu') menu: any
+
   infoAuthentication: any = []
   
-  constructor(private authentication: AuthService) { }
+  constructor(private router: Router) { }
   
   ngOnInit(): void {
     
@@ -22,6 +24,15 @@ export class GradesComponent implements OnInit {
       imageUser: jsonUser.imageUser
     }
 
+  }
+
+  openMenu() {
+    this.menu.nativeElement.classList.toggle('open')
+  }
+
+  logout() {
+    localStorage.clear()
+    this.router.navigate([''])
   }
 
 }
