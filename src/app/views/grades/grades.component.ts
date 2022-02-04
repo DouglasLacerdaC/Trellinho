@@ -17,15 +17,23 @@ export class GradesComponent implements OnInit {
   constructor(private router: Router) { }
   
   ngOnInit(): void {
-    
-    const jsonUser = JSON.parse(localStorage.getItem('userInfo')!)
 
-    this.infoAuthentication = {
-      userName: jsonUser.userName,
-      userEmail: jsonUser.userEmail,
-      imageUser: jsonUser.imageUser
+    if(localStorage.getItem('userInfo')) {
+
+      const jsonUser = JSON.parse(localStorage.getItem('userInfo')!)
+  
+      this.infoAuthentication = {
+        userName: jsonUser.userName,
+        userEmail: jsonUser.userEmail,
+        imageUser: jsonUser.imageUser
+      }
+      
+    } else {
+      
+      this.router.navigate([''])
+
     }
-
+    
   }
 
   openMenu() {
