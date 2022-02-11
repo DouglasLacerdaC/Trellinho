@@ -52,25 +52,30 @@
 
 <div class="content">
 
-    <div class="header">
+    <div class="header animate__animated animate__fadeInDown animate__delay-1s">
         <img src="../../../assets/img/logo.svg" alt="Logo Trellinho">
     </div>
 
-    <h2>Adicione aqui suas anotações</h2>
+    <h2 class="animate__animated animate__fadeInUp animate__delay-1s">Adicione aqui suas anotações</h2>
 
     <div class="form-notes">
+
+        <div class="image-background">
+            <img src="../../../assets/img/clock.svg" alt="">
+        </div>
+        
         <form [formGroup]="notes" (ngSubmit)="onSubmit()">
 
             <div class="radios">
 
                 <div class="form-radio">
-                    <input type="radio" formControlName="type" id="tarefa" value="tarefa">
-                    <label for="tarefa"><i class="fas fa-tasks"></i>Tarefa</label>
-                </div>
-                
-                <div class="form-radio">
                     <input type="radio" formControlName="type" id="lembrete" value="lembrete">
                     <label for="lembrete"><i class="far fa-sticky-note"></i>Lembrete</label>
+                </div>
+
+                <div class="form-radio">
+                    <input type="radio" formControlName="type" id="tarefa" value="tarefa">
+                    <label for="tarefa"><i class="fas fa-tasks"></i>Tarefa</label>
                 </div>
                 
                 <div class="form-radio">
@@ -79,18 +84,24 @@
                 </div>
 
             </div>
-            
+
             <div class="form-control">
-                <label for="">Titulo: </label>
-                <input type="text" formControlName="title">
+                <div class="help">
+                    <p>Utilize esse campo para adicionar o título.</p>
+                </div>
+                <input type="text" formControlName="title" placeholder="Título">
             </div>
-            
+
             <div class="form-control">
-                <label for="">Conteúdo: </label>
-                <textarea formControlName="description"></textarea>
+                <div class="help">
+                    <p>Utilize esse campo para adicionar a descrição desejada.</p>
+                </div>
+                <textarea formControlName="description" placeholder="Conteúdo da nota"></textarea>
             </div>
     
-            <button>enviar</button>
+            <div class="submit">
+                <button>Criar Nota</button>
+            </div>
     
         </form>
     </div>
