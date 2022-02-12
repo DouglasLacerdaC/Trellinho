@@ -108,4 +108,8 @@
     
 </div>
 
+<div class="notes" *ngFor="let item of returnNotes">
+    <p>{{ item.content }}</p>
+</div>
+
 <div class="background-menu" (click)="openMenu()" #background></div>

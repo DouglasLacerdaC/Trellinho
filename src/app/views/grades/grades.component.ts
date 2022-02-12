@@ -1,6 +1,7 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { InsertService } from 'src/app/services/insert.service';
 
 @Component({
   selector: 'app-grades',
@@ -20,10 +21,19 @@ export class GradesComponent implements OnInit {
     description: new FormControl(''),
     type: new FormControl('', Validators.required)
   })
+
+  returnNotes: any
   
-  constructor(private router: Router) { }
+  constructor(private router: Router,
+              private insert: InsertService) { }
   
   ngOnInit(): void {
+    
+    this.insert.returnData().subscribe(
+      data => {
+        this.returnNotes = data
+      }
+    )
 
     if(localStorage.getItem('userInfo')) {
 
@@ -55,7 +65,17 @@ export class GradesComponent implements OnInit {
   }
 
   onSubmit() {
-    console.log(this.notes.value)
+    
+    this.insert.insert(this.notes.value.description, this.notes.value.title)
+
+    this.notes.reset()
+
+    this.insert.returnData().subscribe(
+      data => {
+        this.returnNotes = data
+      }
+    )
+
   }
 
 }

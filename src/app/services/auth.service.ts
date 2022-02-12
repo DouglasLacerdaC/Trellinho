@@ -33,8 +33,14 @@ export class AuthService {
 
       this.router.navigate(['grades'])
 
+      console.log(result)
+
     })
 
+  }
+
+  value() {
+    return getAuth()
   }
 
 }
