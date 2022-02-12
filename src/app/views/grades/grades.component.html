@@ -108,8 +108,41 @@
     
 </div>
 
-<div class="notes" *ngFor="let item of returnNotes">
-    <p>{{ item.content }}</p>
+<div class="flex" *ngIf="returnNotes.length > 0">
+
+    <h2>Suas anotações</h2>
+
+    <div class="notes">
+    
+        <div class="note" *ngFor="let item of returnNotes">
+            
+            <div class="remember">
+                <span>Não vai fazer mesmo?</span>
+                <img src="../../../assets/img/zeni.svg" alt="">
+            </div>
+            
+            <div class="card">
+                
+                <div class="card-header">
+                    <img src="{{ item.imageUser }}" alt="">
+                    <div>
+                        <p>{{ item.nameUser }}</p>
+                        <span>12/11</span>
+                    </div>
+                </div>
+
+                <div class="card-body">
+                    <h4 class="title">{{ item.title }}</h4>
+                    <p> {{ item.content }} </p>
+                </div>
+
+            </div>
+            
+    
+        </div>
+        
+    </div>
+
 </div>
 
 <div class="background-menu" (click)="openMenu()" #background></div>

@@ -1,4 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap');
 
 .background-menu {
     top: 0;
@@ -273,6 +274,7 @@
 
     .form-notes {
         max-width: 900px;
+        padding: 20px;
         margin: 0 auto;
         position: relative;
 
@@ -287,6 +289,13 @@
                 z-index: 1;
             }
 
+            @media(max-width: 900px) {
+                & {
+                    display: none;
+                }
+                
+            }
+
         }
 
         .form-control {
@@ -297,6 +306,13 @@
             max-width: 80%;
             animation: backInLeft;
             animation-duration: 2s;
+
+            @media(max-width: 900px) {
+                & {
+                    max-width: 100%;
+                }
+                
+            }
 
             &:nth-child(2) {
                 margin: 20px 0 0;
@@ -329,11 +345,14 @@
                     border-left: 8px solid transparent;
                     border-right: 8px solid transparent;
                     border-top: 8px solid #005230;
-                    
-                    &:nth-child(2) {
-                        z-index: 1001;
-                    }
 
+                }
+
+                @media(max-width: 900px) {
+                    & {
+                        display: none;
+                    }
+                    
                 }
 
 
@@ -362,9 +381,11 @@
             margin: 20px 0 0;
             animation: backInLeft;
             animation-duration: 1s;
+            z-index: 1000;
             
 
             .form-radio {
+                z-index: 1000;
 
                 input {
                     display: none;
@@ -415,6 +436,13 @@
             display: flex;
             justify-content: flex-end;
 
+            @media(max-width: 900px) {
+                & {
+                    max-width: 100%;
+                }
+                
+            }
+
             button {
                 padding: 3px 30px;
                 border-radius: 50px;
@@ -434,6 +462,125 @@
                     background-color: #005230;
                 }
 
+            }
+
+        }
+
+    }
+
+    
+}
+
+.flex {
+    max-width: 1000px;
+    margin: 100px auto 150px auto;
+
+    h2 {
+        text-align: center;
+        color: #00c875;
+        font-family: 'Inter', sans-serif;
+        font-size: 35px;
+        padding: 20px 0;
+        margin: 0 0 50px 0;
+    }
+
+    .notes {
+        position: relative;
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+
+        @media(max-width: 900px) {
+            & {
+                gap: 50px;
+            }
+            
+        }
+        
+        .note {
+            position: relative;
+            min-width: 300px;
+            z-index: 1000;
+
+            &:hover {
+
+                .remember {
+                    transition: 1s;
+                    opacity: 1;
+                    top: -100px;
+                }
+
+            }
+            
+            .remember {
+                display: flex;
+                align-items: flex-end;
+                position: absolute;
+                top: 0;
+                right: 0;
+                opacity: 0;
+                transition: 200ms;
+                
+                img {
+                    width: 100px;
+                    z-index: 1;
+                    user-select: none;
+                }
+
+                span {
+                    color: #00c875;
+                    font-family: 'Permanent Marker', cursive;
+                    font-size: 22px;
+                    line-height: 20px;
+                    cursor: default;
+                    user-select: none;
+                }
+
+            }
+            
+            .card {
+                min-width: 100%;
+                padding: 20px;
+                border-radius: 10px;
+                box-shadow: 0 10px 40px 0 rgb(199 201 217 / 50%);
+
+                .card-header {
+                    display: flex;
+                    border-bottom: 1px solid #00000017;
+                    padding: 0 0 10px 0;
+
+                    img {
+                        width: 50px;
+                        border-radius: 50%;
+                        margin: 0 20px 0 0;
+                    }
+
+                    div {
+
+                        p {
+                            font-weight: bold;
+                        }
+
+                    }
+
+                }
+
+                .card-body {
+
+                    h4 {
+                        margin: 15px 0;
+                        letter-spacing: 1px;
+                    }
+
+                    p {
+                        max-width: 280px;
+                        font-size: 13px;
+                        color: #000000c2;
+                    }
+
+                }
+                
             }
 
         }
